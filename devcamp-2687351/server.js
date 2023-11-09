@@ -6,6 +6,7 @@ const colors = require('colors')
 const bootcampRoutes = require('./routes/bootcampRoutes')
 const coursesRoutes = require('./routes/coursesRoutes')
 const reviewsRoutes = require ('./routes/reviewsRoutes')
+const userRoutes = require ('./routes/usersroutes')
 //DEPENDENCIA PARA CONEXION A  BD
 const conectDB=require('./config/db')
 
@@ -30,6 +31,9 @@ app.use('/api/v1/devcamp/courses', coursesRoutes)
 
 // vincular las rutas de reviews
 app.use('/api/v1/devcamp/reviews', reviewsRoutes)
+
+//vincular las rutas de users
+app.use('/api/v1/devcamp/auth', userRoutes)
 
 //primera prueba de url del servidor
 app.get('/prueba',
